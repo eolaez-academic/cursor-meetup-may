@@ -44,6 +44,10 @@ Filipino weekly dinner planner (4 servings, no repeat dishes) with fridge/pantry
 - Use `expo-notifications` for local alerts when quantity ≤ `minThreshold`.
 - Request permissions once; handle denial gracefully.
 
+## Tests
+- Run `npm test` before pushing; Jest covers `lib/planner`, `lib/recipes`, `lib/vision` (demo mode).
+- Add tests in `__tests__/` for new planner or recipe logic.
+
 ## Git
 - Remote: `https://github.com/eolaez-academic/cursor-meetup-may.git`
 - Commit messages: short imperative ("Add weekly meal planner screen").

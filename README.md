@@ -9,6 +9,7 @@ cd hackathon-cursor-meetup-may
 npm install
 cp .env.example .env   # optional: add EXPO_PUBLIC_OPENAI_API_KEY for real vision
 npx expo start
+npm test
 ```
 
 Scan with Expo Go on your phone (same Wi‑Fi).
