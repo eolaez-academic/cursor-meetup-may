@@ -2,17 +2,20 @@ import * as Notifications from "expo-notifications";
 import { Platform } from "react-native";
 import { InventoryItem } from "./types";
 
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: true,
-    shouldShowBanner: true,
-    shouldShowList: true,
-  }),
-});
+if (Platform.OS !== "web") {
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: true,
+      shouldSetBadge: true,
+      shouldShowBanner: true,
+      shouldShowList: true,
+    }),
+  });
+}
 
 export async function ensureNotificationPermissions(): Promise<boolean> {
+  if (Platform.OS === "web") return true;
   const { status: existing } = await Notifications.getPermissionsAsync();
   if (existing === "granted") return true;
   const { status } = await Notifications.requestPermissionsAsync();
@@ -28,6 +31,7 @@ export async function ensureNotificationPermissions(): Promise<boolean> {
 
 export async function notifyLowStock(items: InventoryItem[]): Promise<void> {
   if (!items.length) return;
+  if (Platform.OS === "web") return;
   const ok = await ensureNotificationPermissions();
   if (!ok) return;
 
@@ -48,6 +52,7 @@ export async function notifyLowStock(items: InventoryItem[]): Promise<void> {
 }
 
 export async function notifyPlanReady(dishCount: number): Promise<void> {
+  if (Platform.OS === "web") return;
   const ok = await ensureNotificationPermissions();
   if (!ok) return;
   await Notifications.scheduleNotificationAsync({

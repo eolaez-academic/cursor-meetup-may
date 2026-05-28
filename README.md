@@ -27,6 +27,17 @@ Scan with Expo Go on your phone (same Wi‑Fi).
 
 Never commit `.env`. See `AGENTS.md` for agent rules.
 
+## Deploy (Vercel — web)
+
+The app exports as a static web build for demo in the browser.
+
+```bash
+npm run build
+npx vercel --prod
+```
+
+Set `EXPO_PUBLIC_OPENAI_API_KEY` in the Vercel project **Environment Variables** (never commit the value).
+
 ## Repo
 
 https://github.com/eolaez-academic/cursor-meetup-may

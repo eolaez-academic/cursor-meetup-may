@@ -1,6 +1,7 @@
 node_modules/
 .expo/
 dist/
+.vercel/
 npm-debug.*
 *.jks
 *.p8
@@ -16,3 +17,4 @@ web-build/
 # Secrets — never commit
 *.pem
 secrets.json
+.vercel

@@ -21,7 +21,9 @@
           "photosPermission": "Allow Lutong Bahay to analyze fridge and pantry photos."
         }
       ],
-      "expo-notifications"
+      "expo-notifications",
+      "expo-font",
+      "expo-asset"
     ],
     "ios": {
       "supportsTablet": true,
@@ -29,6 +31,10 @@
     },
     "android": {
       "package": "com.meetup.lutongbahay"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
     },
     "extra": {
       "router": {},
