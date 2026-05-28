@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Lutong Bahay Planner",
+    "slug": "lutong-bahay-planner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "lutongbahay",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Lutong Bahay to scan your fridge and pantry."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Lutong Bahay to analyze fridge and pantry photos."
+        }
+      ],
+      "expo-notifications"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.meetup.lutongbahay"
+    },
+    "android": {
+      "package": "com.meetup.lutongbahay"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "lutong-bahay-hackathon"
+      }
+    }
+  }
+}

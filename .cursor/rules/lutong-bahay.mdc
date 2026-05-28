@@ -1,0 +1,8 @@
+---
+description: Lutong Bahay hackathon — secrets, memory, Filipino meal rules
+alwaysApply: true
+---
+
+# Lutong Bahay
+
+Read `AGENTS.md` before changes. Never commit API keys. Use `lib/storage.ts` for all persistence. Seven unique Filipino dinners per week, 4 servings.
